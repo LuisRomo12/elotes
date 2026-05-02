@@ -1,0 +1,26 @@
+# =============================================
+# ARCHIVOS SENSIBLES — nunca subir
+# =============================================
+.env
+.env.local
+.env.*.local
+
+# Base de datos SQLite
+*.db
+*.db-shm
+*.db-wal
+
+# Dependencias
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

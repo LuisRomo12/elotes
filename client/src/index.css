@@ -1,0 +1,168 @@
+/* ===================================================
+   RESET Y BASE
+   =================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  background: #fffdf9;
+  color: #3D2B00;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+}
+
+#root {
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+input {
+  font-family: inherit;
+}
+
+/* ===================================================
+   LAYOUT APP — header + tabs + contenido
+   =================================================== */
+
+/* Header */
+.app-header {
+  background: #BA7517;
+  padding: 0.85rem 1.25rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.app-header h1 {
+  color: #fff;
+  font-size: clamp(1.1rem, 4vw, 1.5rem);
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+/* Tabs */
+.app-tabs {
+  display: flex;
+  background: #fff;
+  border-bottom: 2px solid #eee;
+  position: sticky;
+  top: 56px;
+  z-index: 99;
+}
+
+.app-tab {
+  flex: 1;
+  padding: 0.85rem 0.25rem;
+  border: none;
+  background: transparent;
+  font-size: clamp(0.8rem, 3vw, 1rem);
+  font-weight: 400;
+  color: #888;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.app-tab.activo {
+  font-weight: 700;
+  color: #BA7517;
+  border-bottom-color: #BA7517;
+}
+
+/* Contenido principal */
+.app-content {
+  flex: 1;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ===================================================
+   GRID DE PRODUCTOS
+   =================================================== */
+.grid-productos {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+
+  /* Móvil: 2 columnas */
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Tablet y desktop: 3 columnas */
+@media (min-width: 480px) {
+  .grid-productos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-productos {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+}
+
+/* ===================================================
+   BOTONES DE BILLETES (Cobrar)
+   =================================================== */
+.billetes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+/* ===================================================
+   TIPOGRAFÍA RESPONSIVA
+   =================================================== */
+.titulo-seccion {
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+  font-weight: 700;
+  color: #412402;
+  margin-bottom: 1rem;
+}
+
+.precio-total {
+  font-size: clamp(1.6rem, 6vw, 2.2rem);
+  font-weight: 800;
+  color: #BA7517;
+}
+
+/* ===================================================
+   UTILIDADES
+   =================================================== */
+.text-center { text-align: center; }
+.w-full { width: 100%; }
+
+/* Área segura para dispositivos con notch */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .app-tabs {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
