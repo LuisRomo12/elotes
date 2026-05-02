@@ -41,9 +41,9 @@ export default function BotonProducto({ producto, cantidad = 0, onClick }: Props
           background: "#BA7517",
           color: "#fff",
           borderRadius: "50%",
-          width: 26,
-          height: 26,
-          fontSize: "0.85rem",
+          width: 30,
+          height: 30,
+          fontSize: "1rem",
           fontWeight: 800,
           display: "flex",
           alignItems: "center",
@@ -61,7 +61,7 @@ export default function BotonProducto({ producto, cantidad = 0, onClick }: Props
 
       {/* Nombre */}
       <span style={{
-        fontSize: "0.88rem",
+        fontSize: "1.05rem",
         fontWeight: 600,
         color: "#3D2B00",
         textAlign: "center",
@@ -75,8 +75,8 @@ export default function BotonProducto({ producto, cantidad = 0, onClick }: Props
         background: "#BA7517",
         color: "#fff",
         borderRadius: 20,
-        padding: "0.2rem 0.7rem",
-        fontSize: "0.95rem",
+        padding: "0.25rem 0.8rem",
+        fontSize: "1.15rem",
         fontWeight: 700,
       }}>
         ${producto.precio}
