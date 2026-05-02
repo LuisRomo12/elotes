@@ -107,24 +107,24 @@ input {
    =================================================== */
 .grid-productos {
   display: grid;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 1.25rem;
 
-  /* Móvil: 2 columnas */
-  grid-template-columns: repeat(2, 1fr);
+  /* Móvil: 1 columna para botones GIGANTES */
+  grid-template-columns: 1fr;
 }
 
-/* Tablet y desktop: 3 columnas */
+/* Tablet: 2 columnas */
 @media (min-width: 480px) {
   .grid-productos {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Desktop: 3 columnas */
 @media (min-width: 768px) {
   .grid-productos {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

@@ -13,75 +13,76 @@ export default function BotonProducto({ producto, cantidad = 0, onClick }: Props
       onClick={() => onClick(producto)}
       style={{
         position: "relative",
-        padding: "1rem 0.75rem",
+        padding: "1.2rem",
         background: cantidad > 0 ? "#FFF3DC" : "#FFFFFF",
-        border: cantidad > 0 ? "2.5px solid #BA7517" : "2px solid #E8E0D5",
-        borderRadius: 18,
+        border: cantidad > 0 ? "3px solid #BA7517" : "2px solid #E8E0D5",
+        borderRadius: 20,
         cursor: "pointer",
         width: "100%",
         display: "flex",
-        flexDirection: "column",
+        flexDirection: "row",
         alignItems: "center",
-        gap: "0.4rem",
+        justifyContent: "space-between",
+        gap: "1rem",
         boxShadow: cantidad > 0
           ? "0 4px 12px rgba(186,117,23,0.25)"
           : "0 2px 6px rgba(0,0,0,0.06)",
         transition: "all 0.15s ease",
         WebkitTapHighlightColor: "transparent",
         userSelect: "none",
-        minHeight: 110,
+        minHeight: 120,
       }}
     >
       {/* Badge de cantidad */}
       {cantidad > 0 && (
         <span style={{
           position: "absolute",
-          top: -10,
-          right: -10,
+          top: -12,
+          right: -12,
           background: "#BA7517",
           color: "#fff",
           borderRadius: "50%",
-          width: 30,
-          height: 30,
-          fontSize: "1rem",
+          width: 36,
+          height: 36,
+          fontSize: "1.2rem",
           fontWeight: 800,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          boxShadow: "0 2px 6px rgba(0,0,0,0.25)",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
         }}>
           {cantidad}
         </span>
       )}
 
-      {/* Emoji */}
-      <span style={{ fontSize: "2.4rem", lineHeight: 1 }}>
+      {/* Izquierda: Emoji */}
+      <span style={{ fontSize: "3.5rem", lineHeight: 1 }}>
         {producto.emoji ?? "🫙"}
       </span>
 
-      {/* Nombre */}
-      <span style={{
-        fontSize: "1.05rem",
-        fontWeight: 600,
-        color: "#3D2B00",
-        textAlign: "center",
-        lineHeight: 1.2,
-      }}>
-        {producto.nombre}
-      </span>
+      {/* Derecha: Nombre y Precio */}
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "0.5rem" }}>
+        <span style={{
+          fontSize: "1.4rem",
+          fontWeight: 700,
+          color: "#3D2B00",
+          textAlign: "right",
+          lineHeight: 1.2,
+        }}>
+          {producto.nombre}
+        </span>
 
-      {/* Precio */}
-      <span style={{
-        background: "#BA7517",
-        color: "#fff",
-        borderRadius: 20,
-        padding: "0.25rem 0.8rem",
-        fontSize: "1.15rem",
-        fontWeight: 700,
-      }}>
-        ${producto.precio}
-      </span>
+        <span style={{
+          background: "#BA7517",
+          color: "#fff",
+          borderRadius: 20,
+          padding: "0.3rem 1rem",
+          fontSize: "1.3rem",
+          fontWeight: 800,
+        }}>
+          ${producto.precio}
+        </span>
+      </div>
     </button>
   );
 }
-
